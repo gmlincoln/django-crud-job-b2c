@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+All Jobs - Job Portal
+{% endblock %}
+
+
+
+{% block content %}
+<div class="max-w-6xl mx-auto mt-10 bg-white shadow-md rounded-lg overflow-hidden">
+
+    <div class="px-6 py-4 border-b">
+        <h2 class="text-xl font-bold text-gray-800">
+            All Jobs
+        </h2>
+    </div>
+
+    <div class="overflow-x-auto">
+        <table class="min-w-full table-auto">
+            <thead class="bg-gray-800 text-white">
+                <tr>
+                    <th class="px-6 py-3 text-left">#</th>
+                    <th class="px-6 py-3 text-left">Job Title</th>
+                    <th class="px-6 py-3 text-left w-[100px]">Logo</th>
+                    <th class="px-6 py-3 text-left">Company</th>
+                    <th class="px-6 py-3 text-left">Openings</th>
+                    <th class="px-6 py-3 text-left">Category</th>
+                    <th class="px-6 py-3 text-center">Actions</th>
+                </tr>
+            </thead>
+
+            <tbody class="text-gray-700">
+
+
+                {% for job in jobs %}
+                <tr class="border-b hover:bg-gray-50">
+                    <td class="px-6 py-4">{{ job.id }}</td>
+                    <td class="px-6 py-4">{{ job.job_title }}</td>
+                    <td class="px-6 py-4">
+                        <img src="{{ job.company_logo.url }}" alt="Company Logo">
+                    </td>
+                    <td class="px-6 py-4">
+
+                        {% if job.company_name %}
+                        {{ job.company_name }}
+                        {% else %}
+                        Not Found
+                        {% endif %}
+
+                    </td>
+                    <td class="px-6 py-4">3</td>
+                    <td class="px-6 py-4">Full Time</td>
+
+                    <td class="px-6 py-4 text-center space-x-2">
+
+                        <!-- View Button -->
+                        <a
+                            class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded inline-flex items-center" href="{% url 'single_job_view' job.id %}">
+                            <!-- Eye Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0zm7.938 0C21.953 7.943 17.523 5 12 5
+                                      c-5.523 0-9.953 2.943-10.938 7
+                                      .985 4.057 5.415 7 10.938 7
+                                      5.523 0 9.953-2.943 10.938-7z" />
+                            </svg>
+                            View
+                        </a>
+
+                        <!-- Edit Button -->
+                        <button
+                            class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded inline-flex items-center">
+                            <!-- Pencil Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5h2m-1-1v2m-7 7l9-9
+                                      4 4-9 9H5v-4z" />
+                            </svg>
+                            Edit
+                        </button>
+
+                        <!-- Delete Button -->
+                        <button
+                            class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded inline-flex items-center">
+                            <!-- Trash Icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 7l-1 14H6L5 7m5-4h4m-6 4h8" />
+                            </svg>
+                            Delete
+                        </button>
+
+                    </td>
+                </tr>
+                {% endfor %}
+
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

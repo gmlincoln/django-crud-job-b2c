@@ -1,0 +1,17 @@
+<nav class="bg-gray-800 text-white">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
+        <!-- Logo -->
+        <a href="{% url 'home' %}" class="text-lg font-bold">
+            Job Portal
+        </a>
+
+        <!-- Menu -->
+        <div class="space-x-6">
+            <a href="{% url 'home' %}" class="hover:text-yellow-400">Home</a>
+            <a href="{% url 'add_job' %}" class="hover:text-yellow-400">Add Job</a>
+            <a href="{% url 'all_jobs' %}" class="hover:text-yellow-400">All Jobs</a>
+        </div>
+
+    </div>
+</nav>
