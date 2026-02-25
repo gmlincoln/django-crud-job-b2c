@@ -44,16 +44,16 @@ Job_Portal/           # Django project folder
 
 ### Installation & Setup
 
-1. **Clone the repository** (if not already):
-   ```bash
-   mkdir Job_Portal
-   git clone https://github.com/gmlincoln/django-crud-job-b2c
-   cd Job_Portal
-   ```
-2. **Create and activate a virtual environment**:
+1. **Create and activate a virtual environment**:
    ```bash
    python -m venv .venv
    source ".venv/Scripts/activate"   # Windows PowerShell: .\.venv\Scripts\Activate.ps1
+   ```
+2. **Clone the repository** (if not already):
+   ```bash
+   mkdir Job_Portal
+   cd Job_Portal
+   git clone https://github.com/gmlincoln/django-crud-job-b2c
    ```
 3. **Install dependencies**:
    ```bash
