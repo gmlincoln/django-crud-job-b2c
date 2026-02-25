@@ -46,6 +46,7 @@ Job_Portal/           # Django project folder
 
 1. **Clone the repository** (if not already):
    ```bash
+   mkdir Job_Portal
    git clone https://github.com/gmlincoln/django-crud-job-b2c
    cd Job_Portal
    ```
