@@ -24,7 +24,7 @@ Job_Portal/           # Django project folder
   │   ├── models.py    # `Job` model definition
   │   ├── views.py     # request handlers for home, add, list, detail
   │   ├── urls.py      # URL routes for the app
-  │   └── templates/   # HTML templates used by views
+  │   └── admin.py     # Admin 
   ├── Job_Portal/      # project configuration (settings, urls, wsgi, etc.)
   ├── db.sqlite3       # SQLite database used in development
   ├── manage.py        # CLI entry point for Django commands
@@ -46,7 +46,7 @@ Job_Portal/           # Django project folder
 
 1. **Clone the repository** (if not already):
    ```bash
-   git clone <repository-url> Job_Portal
+   git clone (https://github.com/gmlincoln/django-crud-job-b2c) Job_Portal
    cd Job_Portal
    ```
 2. **Create and activate a virtual environment**:
@@ -56,8 +56,8 @@ Job_Portal/           # Django project folder
    ```
 3. **Install dependencies** (currently only Django):
    ```bash
-   pip install -r requirements.txt  # if a requirements file exists
    pip install django
+   pip install pillow
    ```
 4. **Apply migrations** to set up the database:
    ```bash
