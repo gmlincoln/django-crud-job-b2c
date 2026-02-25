@@ -54,7 +54,7 @@ Job_Portal/           # Django project folder
    python -m venv .venv
    source ".venv/Scripts/activate"   # Windows PowerShell: .\.venv\Scripts\Activate.ps1
    ```
-3. **Install dependencies** (currently only Django):
+3. **Install dependencies**:
    ```bash
    pip install django
    pip install pillow
