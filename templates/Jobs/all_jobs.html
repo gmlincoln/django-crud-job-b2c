@@ -21,7 +21,11 @@ All Jobs - Job Portal
             <thead class="bg-gray-800 text-white">
                 <tr>
                     <th class="px-6 py-3 text-left">#</th>
-                    <th class="px-6 py-3 text-left">Job Title</th>
+                    <th class="px-6 py-3 text-left">
+                        Job Title
+                        <a href="?sort=asc" class="ml-2 text-xs text-blue-300 hover:text-white">▲</a>
+                        <a href="?sort=desc" class="text-xs text-blue-300 hover:text-white">▼</a>
+                    </th>
                     <th class="px-6 py-3 text-left w-[100px]">Logo</th>
                     <th class="px-6 py-3 text-left">Company</th>
                     <th class="px-6 py-3 text-left">Openings</th>
@@ -49,14 +53,14 @@ All Jobs - Job Portal
                         {% endif %}
 
                     </td>
-                    <td class="px-6 py-4">3</td>
-                    <td class="px-6 py-4">Full Time</td>
+                    <td class="px-6 py-4">{{ job.vacancy }}</td>
+                    <td class="px-6 py-4">{{ job.category }}</td>
 
                     <td class="px-6 py-4 text-center space-x-2">
 
                         <!-- View Button -->
-                        <a
-                            class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded inline-flex items-center" href="{% url 'single_job_view' job.id %}">
+                        <a class="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded inline-flex items-center"
+                            href="{% url 'single_job_view' job.id %}">
                             <!-- Eye Icon -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -69,8 +73,9 @@ All Jobs - Job Portal
                         </a>
 
                         <!-- Edit Button -->
-                        <button
-                            class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded inline-flex items-center">
+                        <a
+                            class="bg-yellow-500 hover:bg-yellow-600 text-white px-3 py-1 rounded inline-flex items-center"
+                            href="{% url 'edit_job' job.id %}">
                             <!-- Pencil Icon -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -78,11 +83,12 @@ All Jobs - Job Portal
                                       4 4-9 9H5v-4z" />
                             </svg>
                             Edit
-                        </button>
+                        </a>
 
                         <!-- Delete Button -->
-                        <button
-                            class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded inline-flex items-center">
+                        <a
+                            class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded inline-flex items-center" 
+                            href="{% url 'delete_job' job.id %}">
                             <!-- Trash Icon -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -90,7 +96,7 @@ All Jobs - Job Portal
                                     d="M19 7l-1 14H6L5 7m5-4h4m-6 4h8" />
                             </svg>
                             Delete
-                        </button>
+                        </a>
 
                     </td>
                 </tr>
